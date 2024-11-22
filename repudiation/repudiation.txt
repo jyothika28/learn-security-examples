@@ -1,2 +1,23 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+Answer:
+Vulnerability in insecure.ts
+1. Lack of Authentication: Users can interact with the system (e.g., send or retrieve messages) without verifying their identity.
+2. No Logging: The system does not track or record user activities, making it impossible to establish accountability.
+3. Repudiation Threat: A malicious user can deny their actions (e.g., unauthorized data retrieval) since there is no mechanism to trace requests back to specific users.
+Why secure.ts is Better?
+1. Request Logging: secure.ts logs all interactions, including timestamps, request methods, and client IPs. This creates an audit trail to trace user actions and detect anomalies.
+2. Authentication: Although simplified, the placeholder authentication ensures only authorized users can access sensitive endpoints, preventing unauthorized actions.
+3. Error Tracking: It logs errors with timestamps, making debugging and forensic analysis possible after malicious attempts.
+
+These measures make it much harder for users to deny their actions (repudiation) while providing mechanisms for administrators to investigate and resolve security incidents.
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+1. Access Control: Implement Role-Based Access Control (RBAC) to limit user access based on roles.
+Define and enforce policies for sensitive actions.
+
+2. Robust Authentication: Use industry-standard mechanisms like OAuth, OpenID Connect, or JWT (JSON Web Tokens) for session-based or token-based authentication.
+Ensure all endpoints are protected with proper user validation.
+
+3. Audit Logs: Maintain detailed and tamper-resistant logs of user actions, including IP addresses, timestamps, and the data they accessed or modified.
+Periodically review logs for security violations.
