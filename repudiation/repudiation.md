@@ -27,7 +27,7 @@ The example demonstrates a vulnerability that can lead to repudiation by malicio
     Authentication: It introduces a placeholder for an authentication mechanism to ensure only authorized users can access the /get-messages endpoint. Unauthorized access is explicitly denied, and attempts are logged.
     Error Logging: Any errors that occur are also logged with details about the timestamp and the error message, ensuring visibility into issues that arise.
 3. Which design pattern is used in the secure version to address the vulnerability? Briefly explain how it works?
-    The Interceptor Pattern is used in the secure version.
+    The Middleware Pattern is used in the secure version.
     How It Works?
     Middleware functions act as interceptors that process requests before they reach the actual route handlers.
     Logging Middleware: Logs details about incoming requests to the server.log file.
